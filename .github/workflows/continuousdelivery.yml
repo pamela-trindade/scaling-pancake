@@ -53,4 +53,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: user/app:latest
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/scaling-pancake:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/scaling-pancake:${{ github.sha }}
